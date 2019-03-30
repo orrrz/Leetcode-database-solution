@@ -51,7 +51,7 @@ SELECT p.FirstName, p.LastName, a.City, a.State FROM Person p LEFT JOIN Address 
 
 ### Note
 
-1. 表 Address 中的 personId 是表 Person 的外关键字
+1. 表 Address 中的 personId 是表 Person 的外关键字 
 
 2. 并非每个人都有地址信息，所以使用外连接，left outer join  (等于left join)
 
