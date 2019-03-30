@@ -60,3 +60,5 @@ SELECT p.FirstName, p.LastName, a.City, a.State FROM Person p LEFT JOIN Address 
 4. 在使用left jion时，on和where条件的区别如下：
    - on条件是在生成临时表时使用的条件。
    - where条件是在临时表生成好后，再对临时表进行过滤的条件。
+
+If you have a better solution, you can star and fork [Leetcode-database-solution](https://github.com/orrrz/Leetcode-database-solution) then create a pull request. Thank you!
