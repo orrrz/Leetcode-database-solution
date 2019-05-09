@@ -35,8 +35,10 @@
 ### Solution
 
 ```mysql
+-- Solution 1
 select Score, (select count(distinct score) from scores where score >= s.score) as Rank from scores s order by score desc;
 
+-- Solution 2
 SELECT Score, 
 
 CASE 
