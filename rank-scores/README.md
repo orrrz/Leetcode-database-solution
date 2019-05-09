@@ -37,7 +37,19 @@
 ```mysql
 select Score, (select count(distinct score) from scores where score >= s.score) as Rank from scores s order by score desc;
 
--- 也可以使用窗口函数dense_rank()
+SELECT Score, 
+
+CASE 
+WHEN @prevRank = Score THEN @curRank 
+WHEN @prevRank := Score THEN @curRank := @curRank + 1
+END AS Rank
+
+FROM Scores s, 
+(SELECT @curRank := 0, @prevRank := 0) r
+ORDER BY s.Score desc;
+
+-- Oracle 可以使用窗口函数dense_rank()
+ DENSE_RANK() over(order by 列名 desc）as Rank
 ```
 
 ### Note
